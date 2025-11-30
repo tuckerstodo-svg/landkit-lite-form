@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LandKit Lite – Quote Request</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --lk-green: #089669;
+      --lk-green-dark: #04664a;
+      --bg-soft: #f3f4f6;
+      --border-soft: #e5e7eb;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, sans-serif;
+      background: var(--bg-soft);
+      padding: 40px 16px;
+      color: var(--text-main);
+    }
+
+    .form-wrapper {
+      max-width: 520px;
+      margin: 0 auto;
+      border-radius: 18px;
+      background: #ffffff;
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.16);
+      overflow: hidden;
+    }
+
+    .header-bar {
+      background: linear-gradient(135deg, var(--lk-green), var(--lk-green-dark));
+      padding: 28px 24px 24px;
+      text-align: center;
+    }
+
+    .header-title {
+      color: #ffffff;
+      margin: 0;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .header-subtitle {
+      color: #e5e7eb;
+      font-size: 14px;
+      margin-top: 6px;
+    }
+
+    .content-section {
+      padding: 28px 24px 36px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 24px;
+      margin-bottom: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border-soft);
+      font-size: 14px;
+      background: #fff;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    button {
+      margin-top: 22px;
+      width: 100%;
+      padding: 14px;
+      background: var(--lk-green);
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background: var(--lk-green-dark);
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="form-wrapper">
+
+    <div class="header-bar">
+      <h1 class="header-title">Quote Request</h1>
+      <p class="header-subtitle">Share a few details and we’ll get your quote started right away.</p>
+    </div>
+
+    <div class="content-section">
+
+      <p class="subtitle">
+        Tell us about your project and we’ll follow up with a clear, professional estimate.
+      </p>
+
+      <form method="POST"
+        action="https://tuckerstodo.app.n8n.cloud/webhook/8169f0e4-7880-4598-a96b-fba974f4d9c2"
+        enctype="multipart/form-data"
+        onsubmit="setTimeout(() => { window.location.href='thank-you.html'; }, 300);">
+
+        <div class="section-label">Contact Information</div>
+
+        <div class="field">
+          <label>Full Name</label>
+          <input type="text" name="name" placeholder="John Doe" required>
+        </div>
+
+        <div class="field">
+          <label>Phone Number</label>
+          <input type="tel" name="phone" placeholder="(555) 123-4567" required>
+        </div>
+
+        <div class="field">
+          <label>Email Address (optional)</label>
+          <input type="email" name="email" placeholder="you@example.com">
+        </div>
+
+        <div class="section-label">Service Address</div>
+
+        <div class="field">
+          <label>Street Address</label>
+          <input type="text" name="street" placeholder="123 Main St" required>
+        </div>
+
+        <div class="field">
+          <label>City</label>
+          <input type="text" name="city" placeholder="Wellington" required>
+        </div>
+
+        <div class="field">
+          <label>State</label>
+          <input type="text" name="state" placeholder="FL" required>
+        </div>
+
+        <div class="field">
+          <label>ZIP Code</label>
+          <input type="text" name="zip" placeholder="33414" required>
+        </div>
+
+        <div class="section-label">Service Details</div>
+
+        <div class="field">
+          <label>What service do you need?</label>
+          <select name="service_type" id="service_type" required onchange="toggleOtherService()">
+            <option value="">Select service</option>
+            <option value="Lawn Mowing">Lawn Mowing</option>
+            <option value="Hedge Trimming">Hedge Trimming</option>
+            <option value="Sod Install">Sod Install</option>
+            <option value="Mulching">Mulching</option>
+            <option value="Cleanup">Cleanup</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="field" id="other_service_field" style="display:none;">
+          <label>Other Service Detail</label>
+          <input type="text" name="other_service_detail" placeholder="If you selected Other...">
+        </div>
+
+        <div class="section-label">Project Description</div>
+
+        <div class="field">
+          <label>Job Description</label>
+          <textarea name="job_description" placeholder="Describe the project..."></textarea>
+        </div>
+
+        <button type="submit">Submit Request</button>
+
+      </form>
+
+    </div>
+  </section>
+
+  <script>
+    function toggleOtherService() {
+      var select = document.getElementById('service_type');
+      var field = document.getElementById('other_service_field');
+      field.style.display = select.value === 'Other' ? 'block' : 'none';
+    }
+  </script>
+
+</body>
+</html>

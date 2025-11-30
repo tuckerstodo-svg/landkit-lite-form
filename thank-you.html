@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You - LandKit Lite</title>
+  <title>Thank You</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
@@ -14,58 +12,43 @@
       margin: 0;
       font-family: "Inter", sans-serif;
       background: #f3f4f6;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 24px;
-    }
-
-    .wrapper {
-      background: white;
-      padding: 40px 32px;
-      max-width: 420px;
-      width: 100%;
-      border-radius: 16px;
+      padding: 40px 16px;
       text-align: center;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.15);
-      opacity: 0;
-      transform: translateY(10px);
-      animation: fadeIn 0.35s ease-out forwards;
+      color: #111827;
     }
 
-    @keyframes fadeIn {
-      to { opacity: 1; transform: translateY(0); }
+    .box {
+      max-width: 480px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 18px;
+      box-shadow: 0 20px 45px rgba(15,23,42,0.15);
     }
 
     h1 {
-      font-size: 24px;
-      font-weight: 600;
-      color: #089669;
-      margin-bottom: 16px;
+      font-size: 26px;
+      margin-bottom: 10px;
     }
 
     p {
       font-size: 15px;
-      color: #475569;
-      margin: 0 auto 24px auto;
-      max-width: 320px;
+      color: #6b7280;
+      line-height: 1.6;
     }
 
-    .button {
+    a {
       display: inline-block;
-      margin-top: 12px;
-      padding: 12px 20px;
+      margin-top: 22px;
+      padding: 12px 18px;
       background: #089669;
       color: white;
-      font-size: 15px;
-      font-weight: 600;
-      border-radius: 999px;
       text-decoration: none;
-      transition: 0.2s ease;
+      border-radius: 12px;
+      font-weight: 600;
     }
 
-    .button:hover {
+    a:hover {
       background: #04664a;
     }
   </style>
@@ -73,12 +56,11 @@
 
 <body>
 
-<div class="wrapper">
-  <h1>Thank You!</h1>
-  <p>Your request has been received. We'll review the details and reach out with a quote shortly.</p>
-
-  <a href="index.html" class="button">Back to Home</a>
-</div>
+  <div class="box">
+    <h1>Thank You!</h1>
+    <p>Your request has been submitted successfully. We’ll review the details and follow up very soon.</p>
+    <a href="index.html">Back to Form</a>
+  </div>
 
 </body>
 </html>
