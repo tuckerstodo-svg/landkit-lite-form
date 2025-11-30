@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You - LandKit Lite</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: #f3f4f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .wrapper {
+      background: white;
+      padding: 40px 32px;
+      max-width: 420px;
+      width: 100%;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeIn 0.35s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #089669;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 15px;
+      color: #475569;
+      margin: 0 auto 24px auto;
+      max-width: 320px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 20px;
+      background: #089669;
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      background: #04664a;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="wrapper">
+  <h1>Thank You!</h1>
+  <p>Your request has been received. We'll review the details and reach out with a quote shortly.</p>
+
+  <a href="index.html" class="button">Back to Home</a>
+</div>
+
+</body>
+</html>
